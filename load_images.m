@@ -1,5 +1,6 @@
+% load_images.m
+% this is simply a script to load and view images from the CIFAR-10 dataset
 load('./cifar-10-batches-mat/data_batch_1.mat');
-
 img_num=1;
 
 while 1>0
