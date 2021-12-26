@@ -45,26 +45,6 @@ XTrain=data_(trainInd(:),:);
 YTrain=labels_(trainInd(:));
 
 % define nn config
-layers=[
-    featureInputLayer(num_feat,'Name','input')
-    
-    fullyConnectedLayer(num_lay,'Name','fc1')
-    reluLayer('Name','relu1')
-    
-    fullyConnectedLayer(num_lay,'Name','fc2')
-    reluLayer('Name','relu2')
-    
-    fullyConnectedLayer(num_label,'Name','fc3')
-    softmaxLayer('Name','sm')
-    
-    classificationLayer('Name','classification')
-];
 
-options=trainingOptions('sgdm', ...
-    'MaxEpochs',100, ...
-    'InitialLearnRate',0.04, ...
-    'MiniBatchSize',100, ...
-    'Plots','training-progress' ...
-);
 
 % traing nn
