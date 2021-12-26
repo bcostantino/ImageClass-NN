@@ -9,3 +9,10 @@ else
     valPerc=0.0;
     [XTrain,YTrain,XVal,YVal,XTest,YTest]=prepNetworkData(trainPerc,valPerc);
 end
+
+for i=1:1000
+    imshow(XTrain(:,:,:,i));
+    truesize([200 200])
+    title(YTrain(i));
+    pause(5);
+end
