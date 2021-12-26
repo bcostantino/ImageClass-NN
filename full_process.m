@@ -17,16 +17,15 @@ for i=1:num_batches
         img=cat(3,ch_r,ch_g,ch_b);
         img=imrotate(img,-90,'bilinear');
         
+        ax1=subplot(2,1,1);
         imshow(img);
-        truesize([500 500]);
-        w=waitforbuttonpress;
         
         proc_data(j,:,:,:)=img;
         img_copy=squeeze(proc_data(j,:,:,:));
-        disp([isequal(img, img_copy)]);
+        disp(['img==img_copy -> ' num2str(isequal(img, img_copy))]);
         
+        ax2=subplot(2,1,2);
         imshow(img_copy);
-        truesize([500 500]);
         w=waitforbuttonpress;
     end
     
