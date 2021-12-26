@@ -1,4 +1,4 @@
-function [X,Y]=get_training_data(type)
+function [X,Y]=get_training_data()
     load('./cifar-10-batches-mat/data_batch_1.mat', 'data', 'labels');
     num_ex=size(data,1);
     X=zeros(num_ex,size(data,2)/3);
@@ -16,11 +16,8 @@ function [X,Y]=get_training_data(type)
         img_g=rgb2gray(img);
 
         % extract features for training
-        if type=='feat'
-            X(i,:)=extract_features(img_g);
-        else
-            X(i,:)=img_g(:);
-        end
+        %X(i,:)=extract_features(img_g);
+        X(i,:)=img_g(:);
     end
 
     % save training data
