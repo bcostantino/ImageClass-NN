@@ -36,10 +36,7 @@ for i=1:num_batches
 end
 
 % preprocess
-f_data=zeros(num_samples,32,32,3);
-for i=1:num_samples
-    
-end
+
 
 % load training data
 [trainInd,valInd,testInd]=dividerand(num_samples,0.6,0.2,0.2);
