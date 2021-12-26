@@ -8,7 +8,7 @@ for i=1:num_batches
     fname=['./cifar-10-batches-mat/data_batch_' num2str(i) '.mat'];
     load(fname, 'data', 'labels');
     
-    proc_data=zeros(10000,32,32,3);
+    proc_data=uint8(zeros(10000,32,32,3));
     for j=1:10000
         img_raw=data(j,:);
         ch_r=reshape(img_raw(1:1024),32,32);
