@@ -22,6 +22,9 @@ for i=1:num_batches
         w=waitforbuttonpress;
         
         proc_data(j,:,:,:)=img;
+        
+        disp([isequal(img, squeeze(proc_data(j,:,:,:)))]);
+        
         imshow(squeeze(proc_data(j,:,:,:)));
         truesize([500 500]);
         w=waitforbuttonpress;
