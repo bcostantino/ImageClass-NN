@@ -22,10 +22,10 @@ for i=1:num_batches
         w=waitforbuttonpress;
         
         proc_data(j,:,:,:)=img;
+        img_copy=squeeze(proc_data(j,:,:,:));
+        disp([isequal(img, img_copy)]);
         
-        disp([isequal(img, squeeze(proc_data(j,:,:,:)))]);
-        
-        imshow(squeeze(proc_data(j,:,:,:)));
+        imshow(img_copy);
         truesize([500 500]);
         w=waitforbuttonpress;
     end
