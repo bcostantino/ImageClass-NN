@@ -22,23 +22,26 @@ options=trainingOptions('sgdm', ...
     'MaxEpochs',100, ...
     'InitialLearnRate',0.04, ...
     'MiniBatchSize',100, ...
+    'Verbose',false, ...
     'Plots','training-progress' ...
 );
 
-if isfile('./training_data.mat')
-    load('./training_data.mat','X','Y');
+fname1='./training_data_old.mat';
+if isfile(fname1)
+    load(fname1,'X','Y');
 else
-    [X,Y]=get_training_data('gray');
+    [X,Y]=get_training_data();
 end
 
 XTrain=X;
 YTrain=categorical(Y);
 
-if isfile('./trained_net.mat')
-    load('./trained_net.mat','net');
+fname2='./trained_net_old.mat';
+if isfile(fname2)
+    load(fname2,'net');
 else
     net=trainNetwork(X,YTrain,layers,options);
-    save('./trained_net.mat','net');
+    save(fname2,'net');
 end
 
 analyzeNetwork(net);
